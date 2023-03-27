@@ -7,18 +7,13 @@ services:
     volumes:
       - .:/usr/src/app
     environment:
-      DB_HOST: postgres
-      DB_NAME: postgres
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
     depends_on:
-      - postgres
+      - db
 
   db:
     image: postgres:latest
-    restart: always
-    ports:
-      - "5433:5432"
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
     environment:
