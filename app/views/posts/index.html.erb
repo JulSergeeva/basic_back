@@ -1,0 +1,7 @@
+<div>
+  <h1>Posts</h1>
+  <% @posts.each do |post| %>
+    <%= post.body[0, 50] + '...' %>
+    <%= link_to "show more", post%></br>
+  <% end %>
+</div>

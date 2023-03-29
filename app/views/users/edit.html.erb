@@ -1,0 +1,5 @@
+<%= form_with model: User.recovery_password, method: :get do |form| %>
+  <%= label_tag :password, "New Password" %><br />
+  <%= form.text_field :password %><br />
+  <p><%= submit_tag "Update" %></p>
+<% end %>

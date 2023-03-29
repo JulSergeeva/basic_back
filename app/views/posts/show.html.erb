@@ -1,0 +1,15 @@
+<table>
+  <thead>
+    <tr>
+      <th>Post</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td><%= @post.body %></td>
+      </tr>
+  </tbody>
+</table>
+
+<p><%= link_to "All posts", {:action => 'index' }%></p>
