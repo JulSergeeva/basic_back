@@ -1,0 +1,7 @@
+<div class="d-flex align-items-center justify-content-center">
+  <%= form_with model: User.recovery_password, method: :get do |form| %>
+    <%= label_tag :password, "New Password", :class => 'form-label' %><br />
+    <%= form.text_field :password, :class => 'form-control' %><br />
+    <%= submit_tag "Update", :class => 'btn btn-primary' %>
+  <% end %>
+</div>

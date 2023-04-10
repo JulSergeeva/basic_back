@@ -1,0 +1,9 @@
+<div class="m-5">
+  <h1>Posts</h1>
+  <% @posts.each do |post| %>
+    <div class="m-3">
+      <%= post.body[0, 50] + '...' %>
+      <%= link_to "show more", post, :class => 'btn btn-info'%></br>
+    </div>
+  <% end %>
+</div>
