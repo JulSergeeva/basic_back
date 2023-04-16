@@ -1,0 +1,16 @@
+/* Navbar container */
+.navbar {
+    background-color: rgb(173, 216, 230);
+    top: 0;
+    width: 100%;
+}
+
+.navbar a {
+    color: white; /* Set text color */
+    display: block; /* Display links as block elements */
+    float: left; /* Float links to the left */
+    font-size: 16px; /* Set font size */
+    padding: 14px 16px; /* Add padding to links */
+    text-align: center; /* Center text in links */
+    text-decoration: none; /* Remove underline from links */
+}
