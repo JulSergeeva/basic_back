@@ -8,9 +8,13 @@ class UsersController < ApplicationController
 
     User.create(user_params)
 
-    redirect_to root_path, notice: 'Successful registration'
+    redirect_to user_dashboard_path, notice: 'Successful registration'
   end
 
   def edit
+  end
+
+  def dashboard
+    @user = current_user
   end
 end

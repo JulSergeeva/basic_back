@@ -5,10 +5,9 @@ class SessionsController < ApplicationController
     if user.present?
       session[:user_id] = user.id
 
-      redirect_to root_path, notice: 'You seccessfully logged in'
+      redirect_to user_dashboard_path, notice: 'You successfully logged in'
     else
       flash.now[:alert] = 'Wrong email or password'
-
       render :create
     end
   end
@@ -19,6 +18,6 @@ class SessionsController < ApplicationController
   end
 
   def new
-    
+
   end
 end
