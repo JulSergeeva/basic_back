@@ -11,36 +11,35 @@
   <%= javascript_importmap_tags %>
 </head>
 
-<body>
-<div class="wrapper">
-  <div class="navbar">
-    <p class="title-sm text-bold">
-      <%= link_to 'All posts', posts_path %>
-    </p>
-    <div>
-      <% if current_user.present? %>
-        <%= "@#{current_user.name}" %>
-        <%=button_to 'Logout', session_path, method: :delete %>
-      <% else %>
-        <%= link_to 'Registration', new_user_path, class: 'button button-yellow mr-sm' %>
-        <%= link_to 'Login', login_path, class: 'button button-yellow' %>
-      <% end %>
+  <body>
+    <div class="wrapper">
+      <div class="navbar">
+        <p class="title-sm text-bold">
+          <%= link_to 'All posts', posts_path %>
+        </p>
+        <div>
+          <% if current_user.present? %>
+            <%= "@#{current_user.name}" %>
+            <%=button_to 'Logout', session_path, method: :delete %>
+          <% else %>
+            <%= link_to 'Registration', new_user_path, class: 'button button-yellow mr-sm' %>
+            <%= link_to 'Login', login_path, class: 'button button-yellow' %>
+          <% end %>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<% if flash[:notice].present? %>
-  <div class="alert alert-success">
-    <%= flash[:notice] %>
-  </div>
-<% end %>
+    <% if flash[:notice].present? %>
+      <div class="alert alert-success">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
 
-<% if flash[:alert].present? %>
-  <div class="alert alert-danger">
-    <%= flash[:alert] %>
-  </div>
-<% end %>
-
-<%= yield %>
-</body>
+    <% if flash[:alert].present? %>
+      <div class="alert alert-danger">
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
+    <%= yield %>
+  </body>
 </html>
