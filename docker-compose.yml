@@ -5,7 +5,7 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - .:/app
+      - .:/usr/src/app
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password

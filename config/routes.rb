@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   # root 'posts#show'
-  root to: 'users#new'
+  root to: 'posts#index'
 
   resources :posts
   resources :users
 
-  get 'login', to: 'sessions#create', as: :login
+  get 'login', to: 'sessions#new'
   resource :session, only: %i[new create destroy]
 
   get '/user/dashboard', to: 'users#dashboard', as: 'user_dashboard'

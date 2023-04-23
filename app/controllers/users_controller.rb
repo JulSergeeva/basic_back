@@ -6,7 +6,8 @@ class UsersController < ApplicationController
   def create
     user_params = params.require(:user).permit(:name, :email, :password)
 
-    User.create(user_params)
+    user = User.create(user_params)
+    session[:user_id] = user.id
 
     redirect_to user_dashboard_path, notice: 'Successful registration'
   end
