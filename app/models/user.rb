@@ -1,6 +1,5 @@
 class User < ApplicationRecord
-  include ActiveModel::API
-
+  has_secure_password
   def self.recovery_password
   end
 
