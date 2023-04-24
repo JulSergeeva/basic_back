@@ -1,0 +1,8 @@
+<%= link_to "Personal Area", current_user %>
+<div class="container-md">
+  <h1 class="text-center fs-1">Post edit</h1>
+  <%= form_for(@post) do |form| %>
+    <%= form.text_field :text, class:'form-control' %><br />
+    <%= submit_tag "Update", class: 'btn btn-primary' %>
+  <% end %>
+</div>
