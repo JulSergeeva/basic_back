@@ -10,16 +10,11 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-
     if @post.save
-      redirect_to @post
+      redirect_to user_dashboard_path
     else
-      render :new
+      render 'new'
     end
-  end
-
-  def show
-    @post = Post.find(params[:id])
   end
 
   def show
@@ -38,7 +33,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to post_path
+    redirect_to user_dashboard_path
   end
 
   private

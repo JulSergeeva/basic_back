@@ -1,5 +1,22 @@
-<h1 class="m-5">Post</h1>
-<div class="m-5">
-  <%= @post.body %></br>
-  <%= link_to "All posts", {:action => 'index' }, :class => 'btn btn-info m-2'%>
-</div>
+<% if current_user %>
+  <%= link_to "Logout", logout_path, method: :delete, class: "btn btn-success" %>
+  <h1 class="text-center fs-1">My Posts</h1>
+  <%= link_to "New post", new_post_path, class: "btn btn-success" %>
+  <div class="row">
+    <% @user.posts.each do |post| %>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <p class="card-text"><%= post.text %></p>
+            <p class="card-text"><%= post.text.truncate(120) %></p>
+            <%= link_to "Read more", post, class: "btn btn-primary" %>
+            <%= link_to "Delete", post, method: :delete, class: "btn btn-warning" %>
+            <%= link_to "Edit", edit_post_path(post), class: "btn btn-info" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <%= link_to "Login", login_path, class: "btn btn-success" %>
+<% end %>
